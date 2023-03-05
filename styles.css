@@ -12,6 +12,7 @@ body
     height: 100dvh;
     justify-content: center;
     align-items: center;
+    background-color: #779FA1;
 }
 
 .clc-container
@@ -94,6 +95,7 @@ body
     /* border: 1px blue solid; */
     flex: 1;
     margin-bottom: 32px;
+    user-select: none;
 }
 
 .col
