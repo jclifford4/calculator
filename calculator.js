@@ -52,21 +52,14 @@ buttons.forEach(button => {
         if (button.classList.contains('number'))
         {
             numbersDisplay.innerHTML = button.innerHTML;
-            if (first !== undefined)
-            {
-                first = first + `${numbersDisplay.innerHTML}`;
-                numbersDisplay.innerHTML = first;
-            }
-            else
-            {
-
-                second = second + `${numbersDisplay.innerHTML}`;
-                numbersDisplay.innerHTML = second;
-            }
+            
         }
 
         if (button.classList.contains('clear'))
-            numbersDisplay.innerHTML = '';
+        {
+            // clearScreen();
+            console.log(numbersClicked);
+        }
 
         if (button.classList.contains('add'))
             operator = '+';
@@ -80,28 +73,21 @@ buttons.forEach(button => {
         if (button.classList.contains('divide'))
         {
             operator = '/';
+            // numbersDisplay.innerHTML = `${numbersDisplay.innerHTML} ${operator}`; 
             // console.log(operator);
-            appendNumbers();
-            
-            clearScreen();
+            // appendNumbers();
+            // clearScreen();
         }
 
         if (button.classList.contains('enter'))
         {
-            appendNumbers();
-            showAll();
+            // appendNumbers();
+            // showAll();
             
-            clearScreen();
+            
+            // clearScreen();
         }
 
-        // if (operator !== undefined && first !== undefined && second !== undefined)
-        // {
-        //     let result = operate(operator, first, second);
-        //     console.log(result);
-
-        // }
-
-        // logNumbers();
 
 
     });
@@ -112,40 +98,46 @@ buttons.forEach(button => {
 function appendNumbers()
 {
     
-    if (numbersClicked.length === 2)
-        numbersClicked.push(second);
+    // if (numbersClicked.length === 2)
+    //     numbersClicked.push(second);
 
 
-    if (operator !== undefined)
-    {
-        numbersClicked.push(first);
-        first = undefined;
-        numbersClicked.push(operator);
-    }
-    console.log(numbersClicked.length);
+    // if (operator !== undefined)
+    // {
+    //     numbersClicked.push(first);
+    //     first = undefined;
+    //     numbersClicked.push(operator);
+    // }
+    // console.log(numbersClicked.length);
     
     
     
 
-    // console.log(numbersClicked);
-    if (numbersClicked.length === 3)
-        console.log("Full");
+    // // console.log(numbersClicked);
+    // if (numbersClicked.length === 3)
+    //     console.log("Full");
 
-    console.table(numbersClicked);
+    // console.table(numbersClicked);
 }
 
 function clearScreen()
 {
-    numbersDisplay.innerHTML = ''
+    // numbersDisplay.innerHTML = '';  
+    // second = '';
+    // while(numbersClicked.length > 0)
+    //     numbersClicked.pop();
+
+    
 }
 
 
 function showAll()
 {
     // numbersDisplay.innerHTML = `${first} ${operator} ${second} = `;
-    console.log(`${numbersClicked[0]} ${numbersClicked[1]} ${numbersClicked[2]} = ${operate(numbersClicked[1], numbersClicked[0], numbersClicked[2])}`);
-    let result = numbersDisplay.innerHTML = operate(numbersClicked[1], numbersClicked[0], numbersClicked[2]);
-    console.log(result);
+    // console.log(`${numbersClicked[0]} ${numbersClicked[1]} ${numbersClicked[2]} = ${operate(numbersClicked[1], numbersClicked[0], numbersClicked[2])}`);
+    // numbersDisplay.innerHTML = (operate(numbersClicked[1], Number(numbersClicked[0]), Number(numbersClicked[2])));
+    // let result = numbersDisplay.innerHTML;
+    // console.log(typeof(result));
 }
 
 
