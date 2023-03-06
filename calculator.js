@@ -3,15 +3,12 @@ const numbersDisplay = document.querySelector('.numbers');
 
 const buttons = document.querySelectorAll('.button');
 
-
-
 // Data
 let operator, displayValue = '';
 let numbers = [];
 let operators = [];
 let currentNum;
 let currentNumString = '';
-
 
 // Add method
 function add(first, second)
@@ -194,7 +191,7 @@ buttons.forEach(button => {
         // Result on click
         if (button.classList.contains('enter'))
         {
-            document.querySelector('.enter').classList.add('active');
+            
             if (numbers.length < 1 || numbers.length > 1 || currentNum === undefined)
                 numbersDisplay.innerHTML = 'ERROR';
             else if (numbers.length >= 1)
@@ -207,7 +204,7 @@ buttons.forEach(button => {
                 if (displayValue % 1 !== 0)
                     numbersDisplay.innerHTML = `${displayValue.toFixed(6)}`;
                 else
-                numbersDisplay.innerHTML = `${displayValue}`;
+                    numbersDisplay.innerHTML = `${displayValue}`;
             }
         }
     });
