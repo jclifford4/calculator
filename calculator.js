@@ -40,96 +40,141 @@ console.log(numbersDisplay);
 const buttons = document.querySelectorAll('.button');
 console.log(buttons);
 
-let operator, first = '', second = '';
-let numbersClicked = [];
-let operatorsClicked = [];
+let operator, displayValue = '';
+let numbers = [];
+let operators = [];
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
-
         
-
+        // Append number to display
         if (button.classList.contains('number'))
         {
-            numbersDisplay.innerHTML = button.innerHTML;
-            
+            addNumberToDisplay(button);
+            numbersDisplay.innerHTML = displayValue;
         }
 
+        // Clear display and stored data
         if (button.classList.contains('clear'))
         {
-            // clearScreen();
-            console.log(numbersClicked);
+            clearDisplay();
+            clearContainers();
+            numbersDisplay.innerHTML = '0';
         }
 
-        if (button.classList.contains('add'))
-            operator = '+';
-        
-        if (button.classList.contains('subtract'))
-            operator = '-';
-
-        if (button.classList.contains('multiply'))
-            operator = '*';
-
-        if (button.classList.contains('divide'))
+        if (displayValue != '')
         {
-            operator = '/';
-            // numbersDisplay.innerHTML = `${numbersDisplay.innerHTML} ${operator}`; 
-            // console.log(operator);
-            // appendNumbers();
-            // clearScreen();
+
+            if (button.classList.contains('add'))
+            {
+                operator = '+';
+                appendNumber(Number(displayValue));
+                appendOperator(operator);
+                addOperatorToDisplay(operator);
+                clearDisplay();
+                console.log(numbers);
+                console.log(operators); 
+                
+            }
+            
+            if (button.classList.contains('subtract'))
+            {
+                operator = '-';
+                appendNumber(Number(displayValue));
+                appendOperator(operator);
+                addOperatorToDisplay(operator);
+                clearDisplay();
+                console.log(numbers);
+                console.log(operators); 
+            }
+    
+            if (button.classList.contains('multiply'))
+            {
+                operator = '*';
+                appendNumber(Number(displayValue));
+                appendOperator(operator);
+                addOperatorToDisplay(operator);
+                clearDisplay();
+                console.log(numbers);
+                console.log(operators); 
+            }
+    
+            if (button.classList.contains('divide'))
+            {
+                operator = '/';
+                appendNumber(Number(displayValue));
+                appendOperator(operator);
+                addOperatorToDisplay(operator);
+                clearDisplay();
+                console.log(numbers);
+                console.log(operators); 
+            }
         }
 
         if (button.classList.contains('enter'))
         {
-            // appendNumbers();
-            // showAll();
-            
-            
-            // clearScreen();
+            if (numbers.length < 1 && operators < 1)
+                numbersDisplay.innerHTML = 'ERROR';
+            else if (numbers.length >= 1)
+            {
+
+                operators.reverse();
+                numbers.push(Number(numbersDisplay.innerHTML));
+                numbers[0] = operate(operators[0], numbers[0], numbers.pop());
+                displayResult(numbers[0]);
+                displayValue = numbers[0];
+            }
+           
         }
 
-
-
     });
-    // console.log(operator);
+   
 });
 
-
-function appendNumbers()
+function displayResult(value)
 {
-    
-    // if (numbersClicked.length === 2)
-    //     numbersClicked.push(second);
-
-
-    // if (operator !== undefined)
-    // {
-    //     numbersClicked.push(first);
-    //     first = undefined;
-    //     numbersClicked.push(operator);
-    // }
-    // console.log(numbersClicked.length);
-    
-    
-    
-
-    // // console.log(numbersClicked);
-    // if (numbersClicked.length === 3)
-    //     console.log("Full");
-
-    // console.table(numbersClicked);
+    clearDisplay();
+    numbersDisplay.innerHTML += `${value}`;
 }
 
-function clearScreen()
+function addNumberToDisplay(button)
 {
-    // numbersDisplay.innerHTML = '';  
-    // second = '';
-    // while(numbersClicked.length > 0)
-    //     numbersClicked.pop();
+    displayValue = displayValue + `${button.innerHTML}`;
+    console.log(displayValue);
+}
 
+function addOperatorToDisplay(operator)
+{
+    numbersDisplay.innerHTML += ' ' + operator;
     
 }
 
+
+function appendNumber(number)
+{
+    numbers.push(number);    
+}
+
+function appendOperator(operator)
+{
+    operators.push(operator);
+}
+
+function clearDisplay()
+{
+    numbersDisplay.innerHTML = '';  
+    displayValue = '';
+    operator = undefined;
+}
+
+function clearContainers()
+{
+    while(numbers.length !== 0)
+        numbers.pop();
+
+    while(operators.length !== 0)
+        operators.pop();
+}
 
 function showAll()
 {
