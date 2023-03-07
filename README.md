@@ -21,4 +21,4 @@ A web based calculator application.
 ### Showcase 
 ![](./images/calculator-blank.png "blank calculator")
 ![](./images/calculator-equation.png "equation calculator")
-![](./images/calculator-result.png"result calculator")
+![](./images/calculator-result.png "result calculator")
