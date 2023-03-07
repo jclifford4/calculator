@@ -34,6 +34,12 @@ function divide(first, second)
     return first / second;
 }
 
+// Modulo mehtod
+function modulo(first, second)
+{
+    return first % second;
+}
+
 // Calculate result based on two numbers and an operator
 function operate(operator, first, second)
 {
@@ -48,6 +54,9 @@ function operate(operator, first, second)
 
     if (operator === '/')
         return divide(first, second);
+
+    if (operator === '%')
+        return modulo(first, second);
     
 }
 
@@ -88,6 +97,7 @@ function calculate(operator)
     appendNumber(Number(displayValue));
     appendOperator(operator);
     addOperatorToDisplay(operator);
+    
     if (numbers.length > 1)
         numbers.pop();
     currentNumString = '';
@@ -125,10 +135,11 @@ function clearContainers()
         operators.pop();
 }
 
-
 // Listener for clicks on buttons.
 buttons.forEach(button => {
     button.addEventListener('click', () => {
+
+        
         
         // Append number to display
         if (button.classList.contains('number'))
@@ -148,6 +159,8 @@ buttons.forEach(button => {
             {
                 addNumberToDisplay(button);
             }
+
+            
         }
 
         // Clear display and stored data
@@ -157,6 +170,28 @@ buttons.forEach(button => {
             clearContainers();
             numbersDisplay.innerHTML = '';
             operator = undefined;
+        }
+
+        if (button.classList.contains('delete'))
+        {
+            if (operators.length >= 1)
+            {
+                numbersDisplay.innerHTML = numbersDisplay.innerHTML.slice(0, numbersDisplay.innerHTML.length - 3);
+                operators.pop();
+            }
+            else 
+            {
+                numbersDisplay.innerHTML = numbersDisplay.innerHTML.slice(0, numbersDisplay.innerHTML.length - 1);
+                displayValue = currentNumString = numbersDisplay.innerHTML;
+                
+            }
+
+            if (numbersDisplay.innerHTML === '' && numbers.length >= 1)
+            {
+                numbers.pop();
+                numbersDisplay.innerHTML = 'ERROR';
+            }
+
         }
 
         // Math functions on click
@@ -184,6 +219,12 @@ buttons.forEach(button => {
             if (button.classList.contains('divide'))
             {
                 operator = '/';
+                calculate(operator);
+            }
+
+            if (button.classList.contains('modulo'))
+            {
+                operator = '%';
                 calculate(operator);
             }
         }

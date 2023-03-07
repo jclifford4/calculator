@@ -4,7 +4,6 @@
     padding: 0;
 }
 
-
 body
 {   
     display: flex;
@@ -23,7 +22,6 @@ body
     /* border: 1px yellow solid; */
     justify-content: center;
     align-items: center;
-    
 }
 
 .clc-outer
@@ -41,7 +39,6 @@ body
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    /* border: 1px solid #151515; */
     border-radius: 20px;
     width: 96%;
     height: 96%;
@@ -49,10 +46,7 @@ body
     background: -webkit-linear-gradient(to left, #B892FF, #EFB0A1);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #B892FF, #EFB0A1);
     gap: 32px;
-    /* box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px; */
     background-color: rgba(185, 148, 255, 1);
-    /* box-shadow: #f02eaa66 5px 5px, #f02eaa4d 10px 10px, #f02eaa33 15px 15px, #f02eaa1a 20px 20px, #f02eaa0d 25px 25px; */
-    /* box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px; */
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
@@ -71,7 +65,6 @@ body
     background: -webkit-linear-gradient(to left, #B892FF, #C879FF);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #B892FF, #C879FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-
 }
 
 .output .numbers
@@ -84,7 +77,6 @@ body
     /* border: 1px red solid; */
     font-size: 45px;
     font-family: 'Calibri', 'Times New Roman', Times, serif;
-
 }
 
 .clc-buttons
@@ -92,7 +84,6 @@ body
     display: flex;
     justify-content: space-evenly;
     width: 90%;
-    /* border: 1px blue solid; */
     flex: 1;
     margin-bottom: 32px;
     user-select: none;
@@ -104,9 +95,7 @@ body
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    /* border: 1px black dashed; */
     width: 90%;
-    
 }
 
 .button
@@ -118,14 +107,9 @@ body
     color: black;
     width: 70px;
     height: 60px;
-    /* background-color: rgba(40, 83, 107, .6); */
     border-radius: 5%;
-    /* box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset; */
     background-color: rgba(233, 255, 249, .7);
-    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
     box-shadow: rgba(7, 16, 27, 0.4) 0px 0px 0px 2px, rgba(4, 11, 19, 0.65) 0px 4px 6px -1px, rgba(0, 0, 0, 0.08) 0px 1px 0px inset;
-
-
 }
 
 .enter
