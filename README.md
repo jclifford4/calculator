@@ -20,5 +20,5 @@ A web based calculator application.
 
 ### Showcase 
 ![](https://github.com/jclifford4/calculator/blob/main/images/calculator-blank.png?raw=true "blank calculator")
-![](https://github.com/jclifford4/calculator/images/calculator-equation.png "equation calculator")
+![](./images/calculator-equation.png "equation calculator")
 ![](https://github.com/jclifford4/calculator/images/calculator-result.png "result calculator")
