@@ -7,6 +7,7 @@
 body
 {   
     display: flex;
+    flex-direction: column;
     background-color: #E9FFF9 ;
     height: 100dvh;
     justify-content: center;
@@ -116,4 +117,56 @@ body
 {
     min-height: 138px;
     border-radius: 10px;
+}
+
+.footer-container
+{
+    margin-bottom: 10px;
+}
+
+.footer-container .links img
+{
+  height: 30px;
+  width: 30px;
+}
+
+.footer-container .git
+{
+  margin-bottom: 4px;
+}
+
+.footer-container .git,
+.footer-container .link
+{
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover
+{
+  transform:scale(1.06);
+  border: 1px solid rgba(31, 31, 31, 0.4);
+  background-color: rgb(74, 123, 157);
+}
+
+.footer-container 
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+}
+
+.footer-container .git img:hover,
+.footer-container .link:hover
+{
+  transform:rotate(360deg) scale(1.2);
+}
+.links 
+{
+  display: flex;
+  width: 400px;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
 }
