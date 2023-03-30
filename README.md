@@ -1,4 +1,5 @@
 # Simple Calculator
+## [Live Preview](https://jclifford4.github.io/calculator/)
 
 ### Description
 A web based calculator application.
